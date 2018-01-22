@@ -1,0 +1,15 @@
+1. Name: David Ma (e8y0b)
+2. Est. TTC: 16 hours
+3. Acknowledgement: Used this image to help me with designing 
+rotateLeft/Right 
+(http://opendatastructures.org/ods-java/img3012.png)
+4. 
+	book.txt	An input file
+	Makefile	A set of compiling instructions
+	mimic*		The generated binary file
+	mimic.cc	A client program
+	README  	This file
+	rose.txt	The input file given by the pdf
+	treap.h		The treap library
+
+5. Special instrcution: Nope

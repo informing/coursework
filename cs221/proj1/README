@@ -1,0 +1,11 @@
+1. Name: Bole Ma (e8y0b)
+2. Time spent on the project: approx. 12 hours 
+3. Acknowledgment of any assistance you received from anyone: cppreference.com
+4. A list of the files in your submission with a brief description of each file. 
+	* dynmatrix.cc - interface for creating/deleteing a cluster and finding the minimum distance
+	* dynmatrix.h - a header file
+	* main.cc - implementation of the upgma algorithm and other helper functions
+	* Makefile - rules for creating/cleaning binary files
+	* README - this file  
+	* species.txt - the source text file
+5. Any special instructions for the marker: nope

@@ -17,8 +17,6 @@ Vector2D BezierCurve::evaluate(float t) const
     //      aka: (m over i)
     //  - std::pow(t,i) computes t raised to the power i
 
-    //@@@@@
-    // YOUR CODE HERE
     Vector2D result(.0, .0);
     float Bi = 0.;
     int m = controlPoints.size() - 1;
@@ -29,7 +27,6 @@ Vector2D BezierCurve::evaluate(float t) const
         result += Bi * controlPoints[i];
     }
     //std::cout << "End" << std::endl;
-    //@@@@@
     
     
     
@@ -43,8 +40,6 @@ void BezierCurve::subdivide(BezierCurve& curve1, BezierCurve& curve2) const
     // Subdivide this Bezier curve into two curves.
     // Return the two smaller curves in curve1 and curve2.
 
-    //@@@@@
-    // YOUR CODE HERE
     std::vector<Vector2D> oldPoints = controlPoints;
     std::stack<Vector2D> secondCurvePoints;
     while (!oldPoints.empty()) {
@@ -61,7 +56,6 @@ void BezierCurve::subdivide(BezierCurve& curve1, BezierCurve& curve2) const
         curve2.addControlPoint(secondCurvePoints.top());
         secondCurvePoints.pop();
     }
-    //@@@@@
 
 }
 
@@ -69,13 +63,9 @@ void BezierCurve::subdivide(BezierCurve& curve1, BezierCurve& curve2) const
 void BezierCurve::draw() const
 {
     // Draw this Bezier curve.
-    // Do this by evaluating the curve at some finite number of t-values,
-    // and drawing line segments between those points.
-    // You may use the BezierCurve::drawLine() function to do the actual
-    // drawing of line segments.
+    // Evaluate the curve at some finite number of t-values,
+    // and draw line segments between those points.
 
-    //@@@@@
-    // YOUR CODE HERE
     const float STEP = 0.001;
     Vector2D prev = evaluate(0);
     for (float t = STEP; t <= 1.; t += STEP) {
@@ -83,7 +73,6 @@ void BezierCurve::draw() const
         drawLine(prev, curr);
         prev = curr;
     }
-    //@@@@@
  
 }
 
@@ -153,8 +142,6 @@ void CurveManager::drawCurves() const
         // to the actual bezier curve, so we only need to draw their 
         // control polygons.
 
-        //@@@@@
-        // YOUR CODE HERE
         BezierCurve curve(*points);
         std::vector<BezierCurve> prev;
         prev.push_back(curve);
@@ -181,7 +168,6 @@ void CurveManager::drawCurves() const
             }
         }
         curve.drawControlPolygon();
-        //@@@@@
     
     }
     else if (curveMode == PIECEWISE_MODE)
@@ -199,8 +185,6 @@ void CurveManager::drawCurves() const
             // Each piecewise curve should be C0 continuous with adjacent
             // curves, meaning they should share an endpoint.
 
-            //@@@@@
-            // YOUR CODE HERE
             //std::cout << "piecewiseDegree:" << piecewiseDegree << std::endl;
             if (points->size() > piecewiseDegree) {
                 for (std::vector<Vector2D>::const_iterator it = points->begin(); 
@@ -212,8 +196,6 @@ void CurveManager::drawCurves() const
                     curve.draw();
                 }
             } 
-
-            //@@@@@
 
         }
         else if (continuityMode == C1_MODE)
@@ -227,8 +209,6 @@ void CurveManager::drawCurves() const
             // Bezier curves in order to enforce the C1 property.
             // These additional control points do not need to show up onscreen.
 
-            //@@@@@
-            // YOUR CODE HERE
             std::vector<Vector2D> inserted;
             if (points->size() > 2 * piecewiseDegree) {
                 for (std::vector<Vector2D>::const_iterator it = points->begin(); 
@@ -271,7 +251,6 @@ void CurveManager::drawCurves() const
                     first.draw();
                 }
             }
-            //@@@@@
 
         }
     }

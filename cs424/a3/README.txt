@@ -1,16 +1,3 @@
-CPSC 424 Assignment 3 template
-Instructor: Prof. Alla Sheffer
-Template last modified by: Shayan Hoshyari
-
-================== from e8y0b ==================
-
-  I'm using Linux to run the program.
-  I've finished all of the tasks.
-  For 3.4 I've chosen C1 continuity.
-  (implementing this by adding quartic curves)
-
-================================================
-
 First, the example executables can be found as:
   a3_example for Linux
   a3_example.exe for Windows

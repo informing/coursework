@@ -1,7 +1,3 @@
-First, the example executables can be found as:
-  a3_example for Linux
-  a3_example.exe for Windows
-
 The code is written in these files:
   vector.h
   pointcanvas.h pointcanvas.cpp
@@ -27,7 +23,6 @@ the Makefile.
 
 Option 1: Set the OS variable
   OS := Linux, for your own linux
-  OS := Linux_ubc_cs, for UBC CS Opensuse 64bit Linux machines
   OS := Mac, for MAC (support not guaranteed)
 
 Option 2: Set the MODE variable
@@ -39,7 +34,3 @@ the package manager. On Linux they are GL, GLU, and freeglut. On Mac,
 you have to search for them yourself. For CS Linux machines, GL, and
 GLUT are installed and we have provided a local build of freeglut
 located in Linux_ubc_cs.
-
-Lastly, the following files are used for Unix builds:
-  Linux_ubc_cs
-  Makefile

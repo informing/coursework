@@ -14,8 +14,8 @@ RM = rm -rf
 ## 
 ## Set OS accordingly. Make sure there are no trailing spaces
 ##
-# OS := Linux
-OS := Linux_ubc_cs
+OS := Linux
+# OS := Linux_ubc_cs
 # OS := Mac
 
 ## 

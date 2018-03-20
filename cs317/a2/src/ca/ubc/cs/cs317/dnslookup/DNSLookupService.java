@@ -461,14 +461,23 @@ public class DNSLookupService {
             short rcode = (short) (code_field_b & 0b1111);
 
             if (rcode == 3) {
-                // TODO: error
-                System.out.println("error rcode=3");
+                // Error return: the name server reports a value of 3 in the RCODE
+                // System.err.println("error rcode=3");
+                return;
+            } else if (rcode == 5) {
+                // Error return: getting a 5 back in the RCODE
                 return;
             }
 
             int[] counts = new int[4];
             for (int i = 0; i < counts.length; i += 1) {
                 counts[i] = getUnsignedShort(resp);
+            }
+
+            if (rcode == 0 && counts[1] == 0) {
+                // Error return: authoritative response but no answer in the answer field
+                // typically occurs when the name exists but there is no corresponding matching IP address
+                return;
             }
 
             if (verboseTracing) {
@@ -619,6 +628,10 @@ public class DNSLookupService {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SocketTimeoutException ste) {
+            // Error return: the lookup times out
+            // ste.printStackTrace();
+            return;
         }
     }
 

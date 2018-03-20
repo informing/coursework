@@ -1,3 +1,11 @@
+** Usage
+
+Right-clicking the application brings up a menu to control the modes of the program. There are three options under the "Mode" submenu: "Basic", "Subdivision", and "Piecewise". 
+- In Basic mode, a Bezier curve is drawn using all the control points on the canvas.
+- In Subdivision mode, the Bezier curve is approximated using the subdivision algorithm. The `<` and `>` keys can be used to increase and decrease the subdivision level.
+- In Piecewise mode, the control points are interpolated/approximated using piecewise Bezier curves of a chosen degree. The number keys 1-9 can be used to choose the degree of the piecewise curves.
+- In Piecewise mode, the continuity of the curves can be set in the "Continuity" menu. There are menu options for C0 and C1 continuity.
+
 The code is written in these files:
   vector.h
   pointcanvas.h pointcanvas.cpp

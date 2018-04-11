@@ -1,16 +1,6 @@
-4- Objective:
+How the GUI works: 
 
-   - Implement the function TriMesh* Subdivision::subdivide(int
-     level).  This function must subdivide the control mesh to the
-     given subdivision level and then return a pointer to the
-     subdivided mesh.
-     
-   - HINT: Create a new subdivision mesh for each subdivision level
-     and store it in memory for later.  If the calling code asks for a
-     level that has already been computed, just return the
-     pre-computed mesh!
-
-2- How the GUI works: you can see the functionality provided by
+You can see the functionality provided by
 the gui in meshview.cpp under the function keyboard().
 
   - w: Toggle viewing mesh wireframe
@@ -23,7 +13,7 @@ the gui in meshview.cpp under the function keyboard().
   - q: exit
   - ESC: exit
 
-3- Building and running the code:
+Building and running the code:
 
    - If you are on MacOS/Linux, read the Makefile instructions
      carefully before using it.  After choosing the right options in
